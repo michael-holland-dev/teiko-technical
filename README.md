@@ -13,7 +13,9 @@ Tables are layered as `bronze_*` (raw CSV), `silver_*` (cleaned schema) and `gol
 
 Results and further analysis is presented using a StreamLit dashboard which when ran with the `make dashboard` command will be on this link: <http://localhost:8501>
 
-## Quick Setup (Also works with GitHub Codespaces)
+Code has also been tested and verified to work in Github Codespaces. 
+
+## Quick Setup to see Pipeline
 
 ```bash
 make setup
@@ -21,7 +23,7 @@ make pipeline
 make dashboard
 ```
 
-## Setup (Python)
+## Dev Instructions (Python)
 
 Requires Python 3.10 or newer. On macOS, create and activate a virtual environment first:
 
