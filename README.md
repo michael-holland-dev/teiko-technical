@@ -3,13 +3,15 @@ By Michael Holland
 
 ## Description
 
-This is my project for the Teiko technical assessment. It analyzes how the drug candidate miraclib affects immune cell populations in a clinical trial: a Python pipeline loads `cell-count.csv` into SQLite (`cell_counts.db`), and a Streamlit dashboard shows the results in three tabs:
+This is my project for the Teiko technical assessment. It builds a data processing pipeline and analyzes how the a drug affects immune cell populations in a clinical trial: a Python pipeline loads `cell-count.csv` into SQLite (`cell_counts.db`), and a Streamlit dashboard shows the results in three tabs:
 
 - **Cell Populations:** each immune cell population's relative frequency in every sample.
 - **Treatment Response:** responders vs non-responders (melanoma, miraclib, PBMC), with Mann-Whitney U tests.
 - **Melanoma PBMC:** melanoma PBMC samples from miraclib patients at baseline (day 0), broken down by project, response and sex.
 
-Tables are layered as `bronze_*` (raw CSV), `silver_*` (cleaned schema) and `gold_*` (precomputed results for the dashboard). Service results are turned into gold rows by the `serializers/` layer, and melanoma PBMC subset tables (`gold_mel_pbmc_subset_*`) are keyed by subset name.
+Tables are layered as `bronze_*` (raw CSV), `silver_*` (cleaned schema) and `gold_*` (precomputed results for the dashboard). This is a collapsed / simplified version of having a bronze / silver / gold data engineering pattern. Service results are turned into gold rows by the `serializers/` layer, and melanoma PBMC subset tables (`gold_mel_pbmc_subset_*`) are keyed by subset name.
+
+Results and further analysis is presented using a StreamLit dashboard which when ran with the `make dashboard` command will be on this link: <http://localhost:8501>
 
 ## Quick Setup (Also works with GitHub Codespaces)
 
